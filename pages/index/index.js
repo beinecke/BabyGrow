@@ -15,6 +15,11 @@ Page({
       url: '../logs/logs'
     })
   },
+  bindTextTap: function(){
+    this.setData({
+      motto: 'MINA'
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

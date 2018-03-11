@@ -1,0 +1,71 @@
+//logs.js
+const util = require('../../utils/util.js')
+
+Page({
+  data: {
+    unitObj:{
+      ml:'毫升',
+      number:'次',
+      scoop:'勺',
+      gram:'克',
+      minute:'分钟',
+    },
+    list:['nursing','pumping','storage','nursing_bottle','milk','pee','bathe'],
+    records: {
+      nursing:{
+        //亲喂
+        title:'母乳亲喂',
+        unit:'minute',
+        total:0,
+        data:[]
+      },
+      nursing_bottle:{
+        //母乳亲喂
+        title:'母乳瓶喂',
+        unit:'ml',
+        total:0,
+        data:[]
+      },
+      pumping:{
+        //挤奶
+        title:'挤奶',
+        unit:'ml',
+        total:0,
+        data:[]
+      },
+      milk:{
+        title:'奶粉',
+        unit:'ml',
+        total:0,
+        data:[]
+      },
+      storage:{
+        title:'母乳存储',
+        unit:'ml',
+        total:0,
+        data:[]
+      },
+      pee:{
+        title:'小便',
+        unit:'number',
+        total:0,
+        data:[]
+      },
+      stool:{
+        title:'大便',
+        unit:'number',
+        total:0,
+        data:[]
+      },
+      bathe:{
+        title:'洗澡',
+        unit:'number',
+        total:0,
+        data:[]
+      }
+    }
+  },
+  onLoad: function () {
+
+  }
+})

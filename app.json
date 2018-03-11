@@ -1,12 +1,25 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/records/records"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "BabyGrow",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black" ,
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      }, {
+        "pagePath": "pages/records/records",
+        "text": "记录"
+      }]
   }
 }
