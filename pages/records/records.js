@@ -17,7 +17,10 @@ Page({
         title:'母乳亲喂',
         unit:'minute',
         total:0,
-        data:[]
+        data:[
+          {time:'5:00',amount:15},
+          {time:'6:00',amount:12},
+        ]
       },
       nursing_bottle:{
         //母乳亲喂

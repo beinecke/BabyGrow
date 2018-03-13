@@ -1,6 +1,19 @@
-<!--logs.wxml-->
+<!--records.wxml-->
 <view class="container log-list">
   <block wx:for="{{list}}" wx:for-item="item" wx:key="{{records[item].title}}">
-    <text class="log-item">{{records[item].title}}  {{records[item].total}}{{unitObj[records[item].unit]}}</text>
+    <view class="record-wrap">
+        <view class="record-title">
+          <text>
+            {{records[item].title}}  {{records[item].total}}{{unitObj[records[item].unit]}}
+          </text>
+        </view>
+        <scroll-view class="log-item"
+            wx:for="{{records[item].data}}" wx:for-item="record"
+            wx:for-index="sequence" wx:key="{{sequence}}">
+          <text>
+            {{record.time}}{{record.amount}}{{unitObj[records[item].unit]}}
+          </text>
+      </scroll-view>
+    </view>
   </block>
 </view>
