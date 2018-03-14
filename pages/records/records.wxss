@@ -15,15 +15,17 @@
 .abstract-icon{
     font-size: 30px;
     float:left;
+    width: 30px;
+    height: 49px;
 }
 .abstract-title{
     float:left;
-    width:120px;
+    width:140px;
     margin-left:10px;
 }
 .abstract-amount{
     float:left;
-    width:180px;
+    width:120px;
 }
 .abstract-add-icon{
     font-size: 30px;

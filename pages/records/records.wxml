@@ -7,7 +7,9 @@
               <text class="iconfont {{records[item].icon}} abstract-icon"></text>
               <view class="abstract-title">{{records[item].title}}</view>
               <view class="abstract-amount">{{records[item].total}} {{unitObj[records[item].unit]}}</view>
-              <text class="iconfont icon-ziyuan2 abstract-add-icon"></text>
+              <text class="iconfont icon-ziyuan1 abstract-add-icon"
+                    data-name="{{item}}" data-date="2018-3-16"
+                    catchtap="fAddLog"></text>
           </view>
         </view>
         <scroll-view class="record-content" scroll-y

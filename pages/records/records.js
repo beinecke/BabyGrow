@@ -18,13 +18,8 @@ Page({
         //亲喂
         'title':'母乳亲喂',
         'unit':'minute',
-        'total':'100',
-        'data':[
-          {
-            'time':'18:00',
-            'amount':'15',
-          },
-        ]
+        'total':'0',
+        'data':[]
       },
       nursing_bottle:{
         //母乳亲喂
@@ -96,4 +91,8 @@ Page({
       activeItem: item
     })
   },
+  fAddLog: function(event){
+    let dataset = event.target.dataset;
+    console.log(dataset.name,dataset.date);
+  }
 })
