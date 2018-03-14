@@ -1,5 +1,10 @@
 <!--records.wxml-->
-<view class="container">
+<view>
+    <picker mode="date" value="{{date}}" start="2018-03-01" end="{{currentDate}}" bindchange="fDateChange">
+        <view class="time-picker">
+            {{date}}
+        </view>
+    </picker>
   <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="{{records[item].title}}">
     <view class="record-wrap record-{{index}}">
         <view class="record-abstract">
@@ -16,7 +21,8 @@
                      wx:if="{{activeItem==item}}">
           <view wx:for="{{records[item].data}}" wx:for-item="record"
                 wx:for-index="sequence" wx:key="{{sequence}}" class="log-item">
-            {{record.time}} {{record.amount}}{{unitObj[records[item].unit]}}
+              <text class="log-time">{{record.time}}</text>
+              <text class="log-amount">{{record.amount}} {{unitObj[records[item].unit]}}</text>
           </view>
       </scroll-view>
     </view>

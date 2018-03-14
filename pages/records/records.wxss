@@ -1,4 +1,6 @@
 @import "../../static/css/font.wxss";
+@import "../../static/css/main.wxss";
+
 .record-wrap{
     width:100%;
     box-sizing: border-box;
@@ -20,7 +22,7 @@
 }
 .abstract-title{
     float:left;
-    width:140px;
+    width:120px;
     margin-left:10px;
 }
 .abstract-amount{
@@ -65,34 +67,11 @@
 .record-8 .record-abstract{
    background-color: #cccccc;
 }
-/*.record-0 .record-content{*/
-   /*background-color: #ffcccc;*/
-/*}*/
-/*.record-1 .record-content{*/
-   /*background-color: #ffcc99;*/
-/*}*/
-/*.record-2 .record-content{*/
-   /*background-color: #ffffcc;*/
-/*}*/
-/*.record-3 .record-content{*/
-   /*background-color: #ccffff;*/
-/*}*/
-/*.record-4 .record-content{*/
-   /*background-color: #99cc99;*/
-/*}*/
-/*.record-5 .record-content{*/
-   /*background-color: #ff9966;*/
-/*}*/
-/*.record-6 .record-content{*/
-   /*background-color: #99cccc;*/
-/*}*/
-/*.record-7 .record-content{*/
-   /*background-color: #ccff99;*/
-/*}*/
-/*.record-8 .record-content{*/
-   /*background-color: #cccccc;*/
-/*}*/
 .log-item{
     height: 36px;
     line-height: 36px;
+}
+.log-time{
+    width: 120px;
+    display: inline-block;
 }

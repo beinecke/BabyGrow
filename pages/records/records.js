@@ -4,6 +4,8 @@ const app = getApp();
 
 Page({
   data: {
+    current:'2018-03-01',
+    date:'2018-03-01',
     activeItem:'',
     unitObj:{
       ml:'毫升',
@@ -68,9 +70,20 @@ Page({
     }
   },
   onLoad: function () {
+    let today = util.fmtDate(new Date(),'yyyy-MM-dd');
+    this.setData({
+      date: today,
+      currentDate: today,
+    })
+    this.fGetData(today);
+  },
+  fGetData: function(date){
     const that = this;
     wx.request({
       url:app.globalData.domain+app.globalData.url['records'],
+      data:{
+        date:that.date
+      },
       success: function(res) {
         if(res.data.code==0){
           that.setData({
@@ -84,9 +97,8 @@ Page({
     })
   },
   fToggleItem: function(event){
-    let name = event.target.dataset.name;
+    let name = event.currentTarget.dataset.name;
     let item = name == this.data.activeItem ? '' : name;
-    console.log(event);
     this.setData({
       activeItem: item
     })
@@ -94,5 +106,15 @@ Page({
   fAddLog: function(event){
     let dataset = event.target.dataset;
     console.log(dataset.name,dataset.date);
+  },
+  fDateChange:function(val){
+    let date = val.detail.value;
+    if(date != this.data.date){
+      this.setData({
+        date: date
+      })
+      this.fGetData(this.data.date);
+    }
+
   }
 })
