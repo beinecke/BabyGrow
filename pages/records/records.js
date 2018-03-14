@@ -91,7 +91,7 @@ Page({
   fToggleItem: function(event){
     let name = event.target.dataset.name;
     let item = name == this.data.activeItem ? '' : name;
-    console.log(event.target,name,item);
+    console.log(event);
     this.setData({
       activeItem: item
     })

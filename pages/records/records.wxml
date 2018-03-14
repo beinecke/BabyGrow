@@ -1,14 +1,17 @@
 <!--records.wxml-->
-<view class="container log-list">
+<view class="container">
   <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="{{records[item].title}}">
     <view class="record-wrap record-{{index}}">
-        <view class="record-title">
+        <view class="record-abstract">
           <view data-name="{{item}}" bindtap="fToggleItem">
-              <text class="iconfont {{records[item].icon}}" style="font-size: 26px"></text>
-              {{records[item].title}}  {{records[item].total}}{{unitObj[records[item].unit]}}
+              <text class="iconfont {{records[item].icon}} abstract-icon"></text>
+              <view class="abstract-title">{{records[item].title}}</view>
+              <view class="abstract-amount">{{records[item].total}} {{unitObj[records[item].unit]}}</view>
+              <text class="iconfont icon-ziyuan2 abstract-add-icon"></text>
           </view>
         </view>
-        <scroll-view class="record-content" wx:if="{{activeItem==item}}">
+        <scroll-view class="record-content" scroll-y
+                     wx:if="{{activeItem==item}}">
           <view wx:for="{{records[item].data}}" wx:for-item="record"
                 wx:for-index="sequence" wx:key="{{sequence}}" class="log-item">
             {{record.time}} {{record.amount}}{{unitObj[records[item].unit]}}
