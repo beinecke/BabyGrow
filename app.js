@@ -34,6 +34,10 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    domain:'https://www.easy-mock.com/mock/5aa79d3d6701e17a67bde1fe/',
+    url:{
+      records:'records'
+    }
   }
 })
