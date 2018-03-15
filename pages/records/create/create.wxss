@@ -1,77 +1,15 @@
 @import "../../../static/css/font.wxss";
 @import "../../../static/css/main.wxss";
 
-.record-wrap{
-    width:100%;
-    box-sizing: border-box;
-    /*border: 1px solid red;*/
-    margin:2px 0;
+.section{
+    padding:10px;
+    margin: 20px 0;
 }
-.record-abstract{
-    height: 48px;
-    line-height: 48px;
-    border-radius:5px;
-    padding:0 10px;
-    position: relative;
+.section_label{
+    width: 30%;
+    float: left;
 }
-.abstract-icon{
-    font-size: 30px;
-    float:left;
-    width: 30px;
-    height: 49px;
-}
-.abstract-title{
-    float:left;
-    width:120px;
-    margin-left:10px;
-}
-.abstract-amount{
-    float:left;
-    width:120px;
-}
-.abstract-add-icon{
-    font-size: 30px;
-    color: #FF6666;
-    position: absolute;
-    right: 20px;
-}
-.record-content{
-    padding:20px 30px;
-    background-color:#CCFFFF;
-    max-height: 280px;
-}
-.record-0 .record-abstract{
-   background-color: #ffffcc;
-}
-.record-1 .record-abstract{
-   background-color:#99CCFF;
-}
-.record-2 .record-abstract{
-   background-color: #ffcccc;
-}
-.record-3 .record-abstract{
-   background-color: #ffcc99;
-}
-.record-4 .record-abstract{
-   background-color: #99cccc;
-}
-.record-5 .record-abstract{
-   background-color: #ccff99;
-}
-.record-6 .record-abstract{
-   background-color: #99cc99;
-}
-.record-7 .record-abstract{
-   background-color: #ff9966;
-}
-.record-8 .record-abstract{
-   background-color: #cccccc;
-}
-.log-item{
-    height: 36px;
-    line-height: 36px;
-}
-.log-time{
-    width: 120px;
-    display: inline-block;
+.section_item{
+    width: 70%;
+    float: left;
 }

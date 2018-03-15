@@ -13,7 +13,7 @@
               <view class="abstract-title">{{records[item].title}}</view>
               <view class="abstract-amount">{{records[item].total}} {{unitObj[records[item].unit]}}</view>
               <text class="iconfont icon-ziyuan1 abstract-add-icon"
-                    data-name="{{item}}" data-date="{{date}}"
+                    data-index="{{index}}" data-date="{{date}}"
                     catchtap="fAddLog"></text>
           </view>
         </view>

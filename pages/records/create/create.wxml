@@ -3,28 +3,47 @@
   <block>
     <form bindsubmit="fSubmit">
         <view class="section">
-            <view class="section__title">日期</view>
-            <picker mode="date" value="{{date}}" start="2018-03-01" bindchange="fDateChange">
-                <view class="picker">
-                    {{date}}
-                </view>
-            </picker>
+            <view class="section_label">日期</view>
+            <view class="section_item">
+                <picker mode="date" value="{{date}}" start="2018-03-01" bindchange="fDateChange">
+                    <view class="picker">
+                        {{form.date}}
+                    </view>
+                </picker>
+            </view>
         </view>
         <view class="section">
-            <view class="section__title">项目</view>
-            <picker value="{{index}}" range="{{list}}">
-                <view class="picker">
-                    {{activeItem}}
-                </view>
-            </picker>
+            <view class="section_label">项目</view>
+            <view class="section_item">
+                <picker value="{{index}}" range="{{list}}">
+                    <view class="picker">
+                        {{storage[form.activeItem].label}}
+                    </view>
+                </picker>
+            </view>
         </view>
         <view class="section">
-            <view class="section__title">时间</view>
-            <picker mode="time" value="{{time}}">
-                <view class="picker">
-                    {{time}}
-                </view>
-            </picker>
+            <view class="section_label">时间</view>
+            <view class="section_item">
+                <picker mode="time" value="{{time}}">
+                    <view class="picker">
+                        {{form.time}}
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="section">
+            <view class="section_label">数量</view>
+            <view class="section_item">
+                {{form.ammount}}{{storage[form.activeItem].unit}}
+            </view>
+            <view class="section">
+                <slider show-value step="5" max="500"/>
+            </view>
+
+        </view>
+        <view class="section">
+            <button formType="submit">提交</button>
         </view>
     </form>
   </block>

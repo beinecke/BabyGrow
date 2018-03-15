@@ -107,12 +107,8 @@ Page({
     let dataset = event.target.dataset;
     let params = {
       date:dataset.date,
-      record:dataset.name
+      index:dataset.index
     };
-    //let url = 'create/create?'+'date='+dataset.date+'&record='+dataset.name;
-    //wx.navigateTo({
-    //  url:'create/create?'+'date='+dataset.date+'&record='+dataset.name
-    //})
     util.cNavigateTo('create/create',params);
   },
   fDateChange:function(val){

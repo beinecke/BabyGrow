@@ -4,9 +4,6 @@ const app = getApp();
 
 Page({
   data: {
-    date:'2018-03-01',
-    time:'00:00',
-    activeItem:'',
     unitObj:{
       ml:'毫升',
       number:'次',
@@ -15,66 +12,20 @@ Page({
       minute:'分钟',
     },
     list:['nursing','pumping','storage','nursing_bottle','milk','pee','stool','bathe'],
-    records: {
-      'nursing':{
-        //亲喂
-        'title':'母乳亲喂',
-        'unit':'minute',
-        'total':'0',
-        'data':[]
-      },
-      nursing_bottle:{
-        //母乳亲喂
-        'title':'母乳瓶喂',
-        'unit':'ml',
-        'total':0,
-        'data':[]
-      },
-      pumping:{
-        //挤奶
-        'title':'挤奶',
-        'unit':'ml',
-        'total':0,
-        'data':[]
-      },
-      milk:{
-        'title':'奶粉',
-        'unit':'ml',
-        'total':0,
-        'data':[]
-      },
-      storage:{
-        'title':'母乳存储',
-        'unit':'ml',
-        'total':0,
-        'data':[]
-      },
-      pee:{
-        'title':'小便',
-        'unit':'number',
-        'total':0,
-        'data':[]
-      },
-      stool:{
-        'title':'大便',
-        'unit':'number',
-        'total':0,
-        'data':[]
-      },
-      bathe:{
-        'title':'洗澡',
-        'unit':'number',
-        'total':0,
-        'data':[]
-      }
-    }
+    form: {
+      date:'2018-03-01',
+      time:'00:00',
+      activeItem:'',
+      amount:0
+    },
+    storage:app.globalData.storage
   },
   onLoad: function (params) {
     let now = new Date();
     this.setData({
-      date: params.date,
-      activeItem:params.record,
-      time: util.fmtDate(now,'hh:mm')
+      'form.date': params.date,
+      'form.activeItem':params.index,
+      'form.time': util.fmtDate(now,'hh:mm')
     })
   },
   fGetData: function(date){
