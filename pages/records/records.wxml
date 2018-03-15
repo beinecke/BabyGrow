@@ -19,10 +19,11 @@
         </view>
         <scroll-view class="record-content" scroll-y
                      wx:if="{{activeItem==item}}">
-          <view wx:for="{{records[item].data}}" wx:for-item="record"
+          <view wx:for="{{records[item].data}}" wx:for-item="log"
                 wx:for-index="sequence" wx:key="{{sequence}}" class="log-item">
-              <text class="log-time">{{record.time}}</text>
-              <text class="log-amount">{{record.amount}} {{storage[item].unit}}</text>
+              <text class="log-time">{{log.time}}</text>
+              <text class="log-amount">{{log.amount}} {{storage[item].unit}}</text>
+              <text class="log-note">{{log.note}}</text>
           </view>
       </scroll-view>
     </view>

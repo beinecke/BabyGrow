@@ -15,7 +15,7 @@
         <view class="section">
             <view class="section_label">项目</view>
             <view class="section_item">
-                <picker value="{{index}}" range="{{list}}">
+                <picker value="{{form.activeItem}}" range="{{list}}" range-key="label" disabled="{{true}}">
                     <view class="picker">
                         {{storage[form.activeItem].label}}
                     </view>
@@ -25,25 +25,32 @@
         <view class="section">
             <view class="section_label">时间</view>
             <view class="section_item">
-                <picker mode="time" value="{{time}}">
+                <picker mode="time" value="{{form.time}}" bindchange="fTimeChange">
                     <view class="picker">
                         {{form.time}}
                     </view>
                 </picker>
             </view>
         </view>
-        <view class="section">
+        <view class="section" wx:if="{{storage[form.activeItem].unit_en!='number'}}">
             <view class="section_label">数量</view>
             <view class="section_item">
-                {{form.ammount}}{{storage[form.activeItem].unit}}
+                {{form.amount}} {{storage[form.activeItem].unit}}
             </view>
-            <view class="section">
-                <slider show-value step="5" max="500"/>
-            </view>
-
+        </view>
+        <view class="section" class="section" wx:if="{{storage[form.activeItem].unit_en!='number'}}">
+            <slider show-value step="5" max="500" bindchange="fAmountChange" wx:if="{{storage[form.activeItem].unit_en=='ml'}}"/>
+            <slider show-value step="1" max="120" bindchange="fAmountChange" wx:if="{{storage[form.activeItem].unit_en=='minute'}}"/>
+            <slider show-value step="1" max="10" bindchange="fAmountChange" wx:if="{{storage[form.activeItem].unit_en=='scoop'}}"/>
         </view>
         <view class="section">
-            <button formType="submit">提交</button>
+            <view class="section_label">备注</view>
+            <view class="section_item">
+                <input maxlength="10" placeholder="最大输入长度10" bindinput="fNoteChange"/>
+            </view>
+        </view>
+        <view class="section">
+            <button form-type="submit" style="width: 50%" type="primary">提交</button>
         </view>
     </form>
   </block>

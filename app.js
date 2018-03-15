@@ -37,7 +37,8 @@ App({
     userInfo: null,
     domain:'https://www.easy-mock.com/mock/5aa79d3d6701e17a67bde1fe/',
     url:{
-      records:'records'
+      records:'records',
+      logs:'logs',
     },
     storage:{
       0:{

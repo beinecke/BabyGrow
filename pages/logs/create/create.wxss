@@ -2,14 +2,15 @@
 @import "../../../static/css/main.wxss";
 
 .section{
-    padding:10px;
-    margin: 20px 0;
+    padding:10px 20px;
+    display: flex;
 }
 .section_label{
     width: 30%;
-    float: left;
 }
 .section_item{
     width: 70%;
-    float: left;
+}
+.section slider{
+    width: 100%;
 }

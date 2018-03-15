@@ -71,7 +71,7 @@
     height: 36px;
     line-height: 36px;
 }
-.log-time{
+.log-time,.log-amount{
     width: 120px;
     display: inline-block;
 }

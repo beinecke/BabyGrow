@@ -58,6 +58,7 @@ Mock.mock(url['records'],'get',{
 			'data|2-5': [{
 				'time': '@time',
 				'amount': '1',
+				'note':'@cname()'
 			}, ]
 		},
 		'7': {

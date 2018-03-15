@@ -48,7 +48,7 @@ Page({
       '7':{
         'total':0,
         'data':[]
-      }
+      },
     }
   },
   onLoad: function () {
@@ -91,7 +91,7 @@ Page({
       date:dataset.date,
       index:dataset.index
     };
-    util.cNavigateTo('create/create',params);
+    util.cNavigateTo('../logs/create/create',params);
   },
   fDateChange:function(val){
     let date = val.detail.value;

@@ -3,7 +3,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/records/records",
-    "pages/records/create/create"
+    "pages/logs/create/create"
   ],
   "window":{
     "backgroundTextStyle":"light",
