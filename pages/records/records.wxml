@@ -5,15 +5,15 @@
             {{date}}
         </view>
     </picker>
-  <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="{{records[item].title}}">
+  <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="{{storage[item].label}}">
     <view class="record-wrap record-{{index}}">
         <view class="record-abstract">
           <view data-name="{{item}}" bindtap="fToggleItem">
-              <text class="iconfont {{records[item].icon}} abstract-icon"></text>
-              <view class="abstract-title">{{records[item].title}}</view>
-              <view class="abstract-amount">{{records[item].total}} {{unitObj[records[item].unit]}}</view>
+              <text class="iconfont {{storage[item].icon}} abstract-icon"></text>
+              <view class="abstract-title">{{storage[item].label}}</view>
+              <view class="abstract-amount">{{records[item].total}} {{storage[item].unit}}</view>
               <text class="iconfont icon-ziyuan1 abstract-add-icon"
-                    data-index="{{index}}" data-date="{{date}}"
+                    data-index="{{item}}" data-date="{{date}}"
                     catchtap="fAddLog"></text>
           </view>
         </view>
@@ -22,7 +22,7 @@
           <view wx:for="{{records[item].data}}" wx:for-item="record"
                 wx:for-index="sequence" wx:key="{{sequence}}" class="log-item">
               <text class="log-time">{{record.time}}</text>
-              <text class="log-amount">{{record.amount}} {{unitObj[records[item].unit]}}</text>
+              <text class="log-amount">{{record.amount}} {{storage[item].unit}}</text>
           </view>
       </scroll-view>
     </view>

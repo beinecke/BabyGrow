@@ -14,56 +14,38 @@ Page({
       gram:'克',
       minute:'分钟',
     },
-    list:['nursing','pumping','storage','nursing_bottle','milk','pee','stool','bathe'],
+    storage:app.globalData.storage,
+    list:['0','1','2','3','4','5','6','7'],
     records: {
-      'nursing':{
-        //亲喂
-        'title':'母乳亲喂',
-        'unit':'minute',
+      '0':{
         'total':'0',
         'data':[]
       },
-      nursing_bottle:{
-        //母乳亲喂
-        'title':'母乳瓶喂',
-        'unit':'ml',
+      '1':{
         'total':0,
         'data':[]
       },
-      pumping:{
-        //挤奶
-        'title':'挤奶',
-        'unit':'ml',
+      '2':{
         'total':0,
         'data':[]
       },
-      milk:{
-        'title':'奶粉',
-        'unit':'ml',
+      '3':{
         'total':0,
         'data':[]
       },
-      storage:{
-        'title':'母乳存储',
-        'unit':'ml',
+      '4':{
         'total':0,
         'data':[]
       },
-      pee:{
-        'title':'小便',
-        'unit':'number',
+      '5':{
         'total':0,
         'data':[]
       },
-      stool:{
-        'title':'大便',
-        'unit':'number',
+      '6':{
         'total':0,
         'data':[]
       },
-      bathe:{
-        'title':'洗澡',
-        'unit':'number',
+      '7':{
         'total':0,
         'data':[]
       }
