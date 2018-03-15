@@ -1,11 +1,11 @@
 //records.js
-const util = require('../../utils/util.js');
+const util = require('../../../utils/util.js');
 const app = getApp();
 
 Page({
   data: {
-    current:'2018-03-01',
     date:'2018-03-01',
+    time:'00:00',
     activeItem:'',
     unitObj:{
       ml:'毫升',
@@ -69,13 +69,13 @@ Page({
       }
     }
   },
-  onLoad: function () {
-    let today = util.fmtDate(new Date(),'yyyy-MM-dd');
+  onLoad: function (params) {
+    let now = new Date();
     this.setData({
-      date: today,
-      currentDate: today,
+      date: params.date,
+      activeItem:params.record,
+      time: util.fmtDate(now,'hh:mm')
     })
-    this.fGetData(today);
   },
   fGetData: function(date){
     const that = this;
@@ -96,6 +96,9 @@ Page({
       }
     })
   },
+  fSubmit:function(){
+
+  },
   fToggleItem: function(event){
     let name = event.currentTarget.dataset.name;
     let item = name == this.data.activeItem ? '' : name;
@@ -105,15 +108,7 @@ Page({
   },
   fAddLog: function(event){
     let dataset = event.target.dataset;
-    let params = {
-      date:dataset.date,
-      record:dataset.name
-    };
-    //let url = 'create/create?'+'date='+dataset.date+'&record='+dataset.name;
-    //wx.navigateTo({
-    //  url:'create/create?'+'date='+dataset.date+'&record='+dataset.name
-    //})
-    util.cNavigateTo('create/create',params);
+    console.log(dataset.name,dataset.date);
   },
   fDateChange:function(val){
     let date = val.detail.value;
@@ -121,7 +116,8 @@ Page({
       this.setData({
         date: date
       })
-      this.fGetData(date);
+      this.fGetData(this.data.date);
     }
+
   }
 })

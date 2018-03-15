@@ -33,7 +33,17 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const cNavigateTo = (url,obj={}) => {
+  let arr = [],params='';
+  for(let key in obj){
+    arr.push(key+'='+obj[key])
+  }
+  params = arr.length>0?'?'+arr.join('&'):'';
+  wx.navigateTo({url:url+params});
+}
+
 module.exports = {
   formatTime: formatTime,
-  fmtDate:fmtDate
+  fmtDate:fmtDate,
+  cNavigateTo:cNavigateTo
 }

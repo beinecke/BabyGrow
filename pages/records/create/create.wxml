@@ -1,0 +1,31 @@
+<!--records.wxml-->
+<view>
+  <block>
+    <form bindsubmit="fSubmit">
+        <view class="section">
+            <view class="section__title">日期</view>
+            <picker mode="date" value="{{date}}" start="2018-03-01" bindchange="fDateChange">
+                <view class="picker">
+                    {{date}}
+                </view>
+            </picker>
+        </view>
+        <view class="section">
+            <view class="section__title">项目</view>
+            <picker value="{{index}}" range="{{list}}">
+                <view class="picker">
+                    {{activeItem}}
+                </view>
+            </picker>
+        </view>
+        <view class="section">
+            <view class="section__title">时间</view>
+            <picker mode="time" value="{{time}}">
+                <view class="picker">
+                    {{time}}
+                </view>
+            </picker>
+        </view>
+    </form>
+  </block>
+</view>
